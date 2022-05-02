@@ -1,0 +1,4 @@
+C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxprojAssemblyReference.cache
+C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.MyForm.resources
+C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.GenerateResource.cache
+C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.CopyComplete

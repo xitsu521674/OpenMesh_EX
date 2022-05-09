@@ -237,16 +237,25 @@ public:
 	std::vector<int>						   faceData;
 	int										   vertexNumber;
 	int										   faceNumber;
-	std::vector<int>						   chosenFace;
+	std::set<int>						       chosenFace;
 	std::vector<float>						   chosenFaceData;
 	std::vector<float>						   chosenVertex;
 	bool									   chosenVertexDraw;
+	std::set<int>							   outsideVertex;
+	std::vector<OMT::VHandle>				   orderedOutsideVertex;
+	std::set<OMT::VHandle>					   insideVertex;
+	std::vector<float>						   outsideVertexData;
+	std::vector<float>						   modelData;
+	bool									   isChosenFaceGathing;
+	std::vector<float>						   textureData;
+	std::vector<float>						   circleData;
 	void Render_Solid();
 	void Render_SolidWireframe();
 	void Render_Wireframe();
 	void Render_Point();
 	void initAvailableData();
 	void generateChosenData();
+	void computeTextureCoordinate();
 private:
 };
 

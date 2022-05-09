@@ -2,3 +2,7 @@ C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_
 C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.MyForm.resources
 C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.GenerateResource.cache
 C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.CopyComplete
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.AssemblyReference.cache
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.MyForm.resources
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.GenerateResource.cache
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.CopyComplete

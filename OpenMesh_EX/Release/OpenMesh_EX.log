@@ -1,9 +1,237 @@
-﻿  MyForm.cpp
+﻿  GUA_OM.cpp
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(78,31): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_face_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{16,{flat}}' }',0}>::operator OpenMesh::FaceHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(80,34): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(81,33): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(99,38): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::EdgeHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_edge_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{12,{flat}}' }',0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(157,41): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(159,35): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(160,34): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(269,42): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(270,12): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(303,49): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(305,22): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(307,39): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(308,19): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(338,20): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(340,20): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(387,49): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(389,22): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(391,39): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(392,19): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toOppositeFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(426,20): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(428,20): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(464,19): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_vertex_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{4,{flat}}' }',0}>::operator OpenMesh::VertexHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(465,17): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_vertex_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{4,{flat}}' }',0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(480,34): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(483,26): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_face_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{16,{flat}}' }',0}>::operator OpenMesh::FaceHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(485,29): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(486,28): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(510,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(513,25): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_face_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{16,{flat}}' }',0}>::operator OpenMesh::FaceHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(516,27): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(532,46): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::EdgeHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_edge_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{12,{flat}}' }',0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(555,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(556,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(557,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(553,24): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_face_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{16,{flat}}' }',0}>::operator OpenMesh::FaceHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(555,36): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(556,36): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(557,36): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(650,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(651,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(652,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(575,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(577,28): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(595,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(596,33): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(601,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toFaceHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(602,29): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::FaceHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toFaceHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(629,57): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(630,32): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(631,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(632,29): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(658,20): warning C4018: '<': signed/unsigned mismatch
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(662,35): warning C4244: '+=': conversion from 'Scalar' to 'float', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(667,35): warning C4244: '+=': conversion from 'Scalar' to 'float', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(680,20): warning C4018: '<=': signed/unsigned mismatch
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(683,23): warning C4244: 'initializing': conversion from 'Scalar' to 'float', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(696,20): warning C4018: '<': signed/unsigned mismatch
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(698,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(699,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(700,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(702,50): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(703,50): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(704,50): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(711,52): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(712,52): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(713,52): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(715,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(716,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(717,48): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+          with
+          [
+              Scalar=double
+          ]
+          and
+          [
+              _Ty=float
+          ]
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(737,46): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::EdgeHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_edge_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{12,{flat}}' }',0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(756,23): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_vertex_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{4,{flat}}' }',0}>::operator OpenMesh::VertexHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+  MyForm.cpp
 F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\timestamp.h(14,1): warning C4005: 'WIN32_LEAN_AND_MEAN': macro redefinition
 F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh-5.2\include\FreeGLUT\freeglut_std.h(58): message : see previous definition of 'WIN32_LEAN_AND_MEAN'
-F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(437,1): warning C4305: '=': truncation from 'double' to 'float'
-F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(440,1): warning C4305: '=': truncation from 'double' to 'float'
-F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(585,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(471,1): warning C4305: '=': truncation from 'double' to 'float'
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(474,1): warning C4305: '=': truncation from 'double' to 'float'
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(642,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
@@ -19,7 +247,7 @@ F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh-5.2\include\GLM\
           [
               T=int
           ]
-F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(349): message : see reference to function template instantiation 'glm::mat<4,4,int,glm::packed_highp> glm::perspective<int>(T,T,T,T)' being compiled
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\MyForm.h(375): message : see reference to function template instantiation 'glm::mat<4,4,int,glm::packed_highp> glm::perspective<int>(T,T,T,T)' being compiled
           with
           [
               T=int
@@ -29,4 +257,13 @@ F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh-5.2\include\GLM\
           [
               T=int
           ]
+  Generating Code...
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp : warning C4793: 'OpenMesh::ArrayKernel::`vcall'{16}'': function compiled as native:
+  	non-clrcall vcall thunks must be compiled as native
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp : warning C4793: 'OpenMesh::ArrayKernel::`vcall'{12}'': function compiled as native:
+  	non-clrcall vcall thunks must be compiled as native
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp : warning C4793: 'OpenMesh::ArrayKernel::`vcall'{4}'': function compiled as native:
+  	non-clrcall vcall thunks must be compiled as native
+F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp : warning C4793: 'OpenMesh::ArrayKernel::`vcall'{8}'': function compiled as native:
+  	non-clrcall vcall thunks must be compiled as native
   OpenMesh_EX.vcxproj -> F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\Release\OpenMesh_EX.exe

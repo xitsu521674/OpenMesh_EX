@@ -113,6 +113,8 @@
   <ItemGroup>
     <None Include="..\Shaders\chosen.frag" />
     <None Include="..\Shaders\chosen.vert" />
+    <None Include="..\Shaders\mapping.frag" />
+    <None Include="..\Shaders\mapping.vert" />
     <None Include="..\Shaders\model.frag" />
     <None Include="..\Shaders\model.vert" />
     <None Include="..\Shaders\pick.frag" />

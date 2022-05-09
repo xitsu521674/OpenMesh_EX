@@ -1,2 +1,2 @@
-PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.25.28610:TargetPlatformVersion=10.0.18362.0:TargetFrameworkVersion=v4.5.2::EnableManagedIncrementalBuild=true:
-Debug|Win32|C:\Users\User\Desktop\基礎電腦圖學\OpenMesh_EX\|
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:VCServicingVersionCrtHeaders=14.29.30136:TargetPlatformVersion=10.0.19041.0:TargetFrameworkVersion=v4.5.2::EnableManagedIncrementalBuild=true:
+Debug|Win32|F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\|

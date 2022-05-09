@@ -565,13 +565,171 @@ void Tri_Mesh::initAvailableData() {
 void Tri_Mesh::generateChosenData() {
 	FIter f_it;
 	FVIter	fv_it;
+	isChosenFaceGathing = true;
+	//取得所有選取面的點
 	chosenFaceData.clear();
+	std::set<VertexHandle> chosenVertices;
 	for (int offset : chosenFace)
 	{
+		FaceHandle _fh = face_handle(offset);
+		for (fv_it = fv_iter(_fh); fv_it; ++fv_it)
+		{
+			VertexHandle _vh = fv_it.handle();
+			chosenVertices.insert(_vh);
+		}
 		for (int i = 0; i < 9; ++i) {
 			chosenFaceData.push_back(vertexData[offset * 9 + i]);
 		}
 	}
+
+	//將選取面的點分為外部與內部
+	outsideVertex.clear();
+	insideVertex.clear();
+	for (VertexHandle _vh : chosenVertices)
+	{
+		if (!isChosenFaceGathing)
+			return;
+		int vvCount = 0;
+		int vfCount = 0;
+		VVIter vv_it;
+		for (vv_it = vv_iter(_vh); vv_it; ++vv_it) {
+			if (chosenVertices.find(vv_it.handle()) != chosenVertices.end()) {
+				vvCount++;
+			}
+		}
+		VFIter vf_it;
+		for (vf_it = vf_iter(_vh); vf_it; ++vf_it) {
+			if (chosenFace.find(vf_it.handle().idx()) != chosenFace.end()) {
+				vfCount++;
+			}
+		}
+		if (chosenFace.size() > 1 && vfCount == 0) {
+			//有單獨的面
+			isChosenFaceGathing = false;
+		}
+		else if (vvCount == vfCount) {
+			insideVertex.insert(_vh);
+		}
+		else {
+			outsideVertex.insert(_vh.idx());
+		}
+	}
+	//將外部點排成連續
+	orderedOutsideVertex.clear();
+	std::set<int> usedVertex;
+	int currentOrdering = *(outsideVertex.begin());
+	orderedOutsideVertex.push_back(vertex_handle(currentOrdering));
+	usedVertex.insert(currentOrdering);
+	
+	int record = usedVertex.size();
+
+	while (usedVertex.size()!=outsideVertex.size()) {
+		record = usedVertex.size();
+		VVIter vv_it;
+		for (vv_it = vv_iter(vertex_handle(currentOrdering)); vv_it; vv_it++) {
+			if (outsideVertex.find(vv_it.handle().idx()) != outsideVertex.end()) {
+				if (usedVertex.find(vv_it.handle().idx()) == usedVertex.end()) {
+					currentOrdering = vv_it.handle().idx();
+					usedVertex.insert(currentOrdering);
+					orderedOutsideVertex.push_back(vertex_handle(currentOrdering));
+					break;
+				}
+			}
+		}
+		if (record == usedVertex.size()) {
+			isChosenFaceGathing = false;
+			break;
+		}
+	}
+	std::cout << "Is grouping:" << isChosenFaceGathing << "\n";
+
+	//
+	outsideVertexData.clear();
+	for (int idx : outsideVertex) {
+		Point p = point(vertex_handle(idx));
+		outsideVertexData.push_back(p[0]);
+		outsideVertexData.push_back(p[1]);
+		outsideVertexData.push_back(p[2]);
+	}
+}
+void Tri_Mesh::computeTextureCoordinate() {
+	textureData.clear();
+	float modelLength = 0;
+	for (int i = 0; i < orderedOutsideVertex.size(); ++i) {
+		if (i == orderedOutsideVertex.size() - 1) {
+			Point p1 = point(orderedOutsideVertex[0]);
+			Point p2 = point(orderedOutsideVertex[i]);
+			modelLength += (p1 - p2).norm();
+		}
+		else {
+			Point p1 = point(orderedOutsideVertex[i + 1]);
+			Point p2 = point(orderedOutsideVertex[i]);
+			modelLength += (p1 - p2).norm();
+		}
+	}
+	float radius = 5.0f;
+	const float D2R = 0.0174532925f;
+	float zPos = 5;
+	for (float i = 0; i < 360; i+=0.5f) {
+		circleData.push_back(radius * cos(i * D2R));
+		circleData.push_back(radius * sin(i * D2R));
+		circleData.push_back(zPos);
+	}
+	std::vector<Point> contourCoordinate;
+	Point pos;
+	pos[0] = radius * cos(0);
+	pos[1] = radius * sin(0);
+	pos[2] = zPos;
+	contourCoordinate.push_back(pos);
+	
+	float accDegree = 0;
+
+	for (int i = 1; i < orderedOutsideVertex.size(); ++i) {
+		Point p1 = point(orderedOutsideVertex[i]);
+		Point p2 = point(orderedOutsideVertex[i - 1]);
+		float currentLength = (p1 - p2).norm();
+		accDegree += currentLength / modelLength * 360.0f;
+		std::cout << accDegree << " ";
+		pos[0] = (radius * cos(accDegree * D2R));
+		pos[1] = (radius * sin(accDegree * D2R));
+		pos[2] = zPos;
+		contourCoordinate.push_back(pos);
+	}
+	std::cout << "\n";
+	pos[0] = radius * cos(0);
+	pos[1] = radius * sin(0);
+	pos[2] = zPos;
+	contourCoordinate.push_back(pos);
+
+	for (int i = 0; i < contourCoordinate.size()-1; ++i) {
+		if (contourCoordinate[i][0] < contourCoordinate[i + 1][0]) {
+			textureData.push_back(contourCoordinate[i][0]);
+			textureData.push_back(contourCoordinate[i][1]);
+			textureData.push_back(contourCoordinate[i][2]);
+
+			textureData.push_back(contourCoordinate[i+1][0]);
+			textureData.push_back(contourCoordinate[i+1][1]);
+			textureData.push_back(contourCoordinate[i+1][2]);
+
+			textureData.push_back(0);
+			textureData.push_back(0);
+			textureData.push_back(zPos);
+		}
+		else {
+			textureData.push_back(contourCoordinate[i + 1][0]);
+			textureData.push_back(contourCoordinate[i + 1][1]);
+			textureData.push_back(contourCoordinate[i + 1][2]);
+
+			textureData.push_back(contourCoordinate[i][0]);
+			textureData.push_back(contourCoordinate[i][1]);
+			textureData.push_back(contourCoordinate[i][2]);
+
+			textureData.push_back(0);
+			textureData.push_back(0);
+			textureData.push_back(zPos);
+		}
+	}
+
 }
 void Tri_Mesh::Render_Wireframe()
 {

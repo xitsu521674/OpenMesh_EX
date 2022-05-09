@@ -24,8 +24,13 @@ unsigned int quadVAO, quadVBO;
 unsigned int pickVAO, pickVBO;
 unsigned int modelVAO, modelVBO;
 unsigned int chosenVAO, chosenVBO;
+unsigned int outsideVAO, outsideVBO;
 glm::mat4 view;
 glm::mat4 projection;
+/////////////////// screen2 分隔線
+Shader* mappingShader = nullptr;
+unsigned int mappingVAO, mappingVBO;
+unsigned int circleVAO, circleVBO;
 enum Choosemode {
 	VERTEX,
 	FACE,
@@ -135,6 +140,9 @@ namespace OpenMesh_EX {
 	private: System::Windows::Forms::ToolStripMenuItem^ modeToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ faceToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ vertexToolStripMenuItem;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+
+
 	protected:
 
 	private:
@@ -162,7 +170,9 @@ namespace OpenMesh_EX {
 			this->openModelDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveModelDialog = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->hkoglPanelControl1 = (gcnew HKOGLPanel::HKOGLPanelControl());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->menuStrip1->SuspendLayout();
+			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -173,7 +183,7 @@ namespace OpenMesh_EX {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(482, 24);
+			this->menuStrip1->Size = System::Drawing::Size(819, 24);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -215,14 +225,14 @@ namespace OpenMesh_EX {
 			// faceToolStripMenuItem
 			// 
 			this->faceToolStripMenuItem->Name = L"faceToolStripMenuItem";
-			this->faceToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->faceToolStripMenuItem->Size = System::Drawing::Size(110, 22);
 			this->faceToolStripMenuItem->Text = L"Face";
 			this->faceToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::faceToolStripMenuItem_Click);
 			// 
 			// vertexToolStripMenuItem
 			// 
 			this->vertexToolStripMenuItem->Name = L"vertexToolStripMenuItem";
-			this->vertexToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->vertexToolStripMenuItem->Size = System::Drawing::Size(110, 22);
 			this->vertexToolStripMenuItem->Text = L"Vertex";
 			this->vertexToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::vertexToolStripMenuItem_Click);
 			// 
@@ -243,13 +253,13 @@ namespace OpenMesh_EX {
 			hkcoglPanelCameraSetting1->Type = HKOGLPanel::HKCOGLPanelCameraSetting::CAMERATYPE::ORTHOGRAPHIC;
 			this->hkoglPanelControl1->Camera_Setting = hkcoglPanelCameraSetting1;
 			this->hkoglPanelControl1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->hkoglPanelControl1->Location = System::Drawing::Point(0, 24);
+			this->hkoglPanelControl1->Location = System::Drawing::Point(3, 3);
 			this->hkoglPanelControl1->Name = L"hkoglPanelControl1";
 			hkcoglPanelPixelFormat1->Accumu_Buffer_Bits = HKOGLPanel::HKCOGLPanelPixelFormat::PIXELBITS::BITS_0;
 			hkcoglPanelPixelFormat1->Alpha_Buffer_Bits = HKOGLPanel::HKCOGLPanelPixelFormat::PIXELBITS::BITS_0;
 			hkcoglPanelPixelFormat1->Stencil_Buffer_Bits = HKOGLPanel::HKCOGLPanelPixelFormat::PIXELBITS::BITS_0;
 			this->hkoglPanelControl1->Pixel_Format = hkcoglPanelPixelFormat1;
-			this->hkoglPanelControl1->Size = System::Drawing::Size(482, 323);
+			this->hkoglPanelControl1->Size = System::Drawing::Size(394, 594);
 			this->hkoglPanelControl1->TabIndex = 2;
 			this->hkoglPanelControl1->Load += gcnew System::EventHandler(this, &MyForm::hkoglPanelControl1_Load);
 			this->hkoglPanelControl1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::hkoglPanelControl1_Paint);
@@ -258,12 +268,28 @@ namespace OpenMesh_EX {
 			this->hkoglPanelControl1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::hkoglPanelControl1_MouseMove);
 			this->hkoglPanelControl1->MouseWheel += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::hkoglPanelControl1_MouseWheel);
 			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->ColumnCount = 2;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->Controls->Add(this->hkoglPanelControl1, 0, 0);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 27);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(10);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 1;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(800, 600);
+			this->tableLayoutPanel1->TabIndex = 3;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(482, 347);
-			this->Controls->Add(this->hkoglPanelControl1);
+			this->ClientSize = System::Drawing::Size(819, 633);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
@@ -271,6 +297,7 @@ namespace OpenMesh_EX {
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -300,6 +327,8 @@ private: System::Void hkoglPanelControl1_Load(System::Object^  sender, System::E
 	pickShader = new Shader("..\\Shaders\\pick.vert", NULL, NULL, NULL, "..\\Shaders\\pick.frag");
 	modelShader = new Shader("..\\Shaders\\model.vert", NULL, NULL, NULL, "..\\Shaders\\model.frag");
 	chosenShader = new Shader("..\\Shaders\\chosen.vert", NULL, NULL, NULL, "..\\Shaders\\chosen.frag");
+	mappingShader = new Shader("..\\Shaders\\mapping.vert", NULL, NULL, NULL, "..\\Shaders\\mapping.frag");
+
 	screenShader->Use();
 	glUniform1i(glGetUniformLocation(screenShader->Program, "screenTexture"), 0);
 	glUseProgram(0);
@@ -346,9 +375,9 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 	float z = sin(glm::radians(yaw)) * radius;
 	float y = -sin(glm::radians(pitch)) * radius;
 	view = glm::lookAt(glm::vec3(x, y, z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
-	projection = glm::perspective(90, 1, 1, 2000);
+	projection = glm::perspective(90, 1, 0, 2000);
 	glm::mat4 model(1.0f);
-	model = glm::scale(model, glm::vec3(5, 5, 5));
+	model = glm::scale(model, glm::vec3(10, 10, 10));
 	view = view * model;
 
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
@@ -391,6 +420,33 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 		glBindBuffer(GL_ARRAY_BUFFER, chosenVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->chosenFaceData.size(), mesh->chosenFaceData.data());
 		glDrawArrays(GL_TRIANGLES, 0, mesh->chosenFace.size()*3);
+
+		glBindVertexArray(outsideVAO);
+		glBindBuffer(GL_ARRAY_BUFFER, outsideVBO);
+
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->outsideVertexData.size(), mesh->outsideVertexData.data());
+		glPointSize(5);
+		glDrawArrays(GL_POINTS, 0, mesh->outsideVertex.size());
+
+		mesh->computeTextureCoordinate();
+		mappingShader->Use();
+		glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "view"), 1, false, &view[0][0]);
+		glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "projection"), 1, false, &projection[0][0]);
+		glBindVertexArray(mappingVAO);
+		glBindBuffer(GL_ARRAY_BUFFER, mappingVBO);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->textureData.size(), mesh->textureData.data());
+		
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		glDrawArrays(GL_TRIANGLES, 0, mesh->textureData.size() / 3);
+
+		glBindVertexArray(circleVAO);
+		glBindBuffer(GL_ARRAY_BUFFER, circleVBO);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->circleData.size(), mesh->circleData.data());
+		glDrawArrays(GL_LINES, 0, mesh->circleData.size() / 3);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		
+
+
 	}else if(mesh && mesh->chosenVertexDraw && choosemode == Choosemode::VERTEX){
 		mesh->chosenFace.clear();
 		chosenShader->Use();
@@ -506,10 +562,35 @@ private: System::Void openModelDialog_FileOk(System::Object^  sender, System::Co
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	
+	
 	glGenVertexArrays(1, &chosenVAO);
 	glGenBuffers(1, &chosenVBO);
 	glBindVertexArray(chosenVAO);
 	glBindBuffer(GL_ARRAY_BUFFER, chosenVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+	glGenVertexArrays(1, &outsideVAO);
+	glGenBuffers(1, &outsideVBO);
+	glBindVertexArray(outsideVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, outsideVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+	glGenVertexArrays(1, &mappingVAO);
+	glGenBuffers(1, &mappingVBO);
+	glBindVertexArray(mappingVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, mappingVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+	glGenVertexArrays(1, &circleVAO);
+	glGenBuffers(1, &circleVBO);
+	glBindVertexArray(circleVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, circleVBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
@@ -552,15 +633,21 @@ private: System::Void hkoglPanelControl1_MouseClick(System::Object^ sender, Syst
 		//std::cout << glGetError() << "\n";
 
 		//std::cout << windowX << " " << windowY << " " << faceID << "\n";
+		
+		
+
 		if (mesh&&faceID>0) {
-			mesh->chosenFace.push_back(faceID-1);
+			if (mesh->chosenFace.find(faceID - 1) != mesh->chosenFace.end())
+				mesh->chosenFace.erase(faceID - 1);
+			else
+				mesh->chosenFace.insert(faceID - 1);
 		}
 
 		glReadBuffer(GL_DEPTH_ATTACHMENT);
 		float depthValue = 0;
 		glReadPixels(windowX, windowY, 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &depthValue);
 
-		
+		faceID -= 1;//弄回原本faceID
 		
 
 		GLint _viewport[4];
@@ -570,9 +657,9 @@ private: System::Void hkoglPanelControl1_MouseClick(System::Object^ sender, Syst
 		glm::vec3 pos(windowX, windowY, depthValue);
 		glm::vec3 wp = glm::unProject(pos, view, projection, viewport);
 		
-		faceID -= 1;
+		
 		//std::cout << depthValue << "\n";
-		std::cout << wp[0] << " " << wp[1] << " " << wp[2] << "\n";
+		//std::cout << wp[0] << " " << wp[1] << " " << wp[2] << "\n";
 		if (choosemode == Choosemode::VERTEX) {
 			glm::vec3 fv[3];
 			fv[0] = glm::vec3(mesh->vertexData[faceID * 9 + 0], mesh->vertexData[faceID * 9 + 1], mesh->vertexData[faceID * 9 + 2]);
@@ -606,6 +693,42 @@ private: System::Void faceToolStripMenuItem_Click(System::Object^ sender, System
 }
 private: System::Void vertexToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	choosemode = Choosemode::VERTEX;
+}
+
+private: System::Void hkoglPanelControl2_Load(System::Object^ sender, System::EventArgs^ e) {
+	//glewInit();
+	/// init
+	glEnable(GL_TEXTURE_2D);
+
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glEnable(GL_POINT_SMOOTH);
+	/// 
+
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	
+	//hkoglPanelControl2->Invalidate();
+}
+private: System::Void hkoglPanelControl2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	
+	glm::mat4 S2_view = glm::lookAt(glm::vec3(0, 0, -50), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	glm::mat4 S2_projection = glm::perspective(90, 1, 0, 2000);
+	glm::mat4 S2_model(1.0f);
+	S2_model = glm::scale(S2_model, glm::vec3(1, 1, 1));
+	view = view * S2_model;
+
+	glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	
+
+	glUseProgram(0);
 }
 };
 }

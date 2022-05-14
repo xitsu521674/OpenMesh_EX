@@ -5,7 +5,10 @@
 #include <OpenMesh/Core/IO/MeshIO.hh>
 #include <OpenMesh/Core/Mesh/TriMesh_ArrayKernelT.hh>
 #include <OpenMesh/Core/Mesh/PolyMesh_ArrayKernelT.hh>
+#include <OpenMesh/Core/Utils/PropertyManager.hh>
 #include <OpenMesh/Tools/Utils/getopt.h>
+#include <OpenMesh/Core/Mesh/IteratorsT.hh>
+#include <Eigen/Sparse>
 
 #include <windows.h>
 #include <gl/gl.h>
@@ -219,7 +222,6 @@ public:
 	Tri_Mesh()
 	{
 	
-	
 	}
 	//-------Edit Flag-------//
     bool                                       Delete_Flag;
@@ -244,11 +246,15 @@ public:
 	std::set<int>							   outsideVertex;
 	std::vector<OMT::VHandle>				   orderedOutsideVertex;
 	std::set<OMT::VHandle>					   insideVertex;
+	std::vector<OMT::VHandle>				   orderedInsideVertex;
 	std::vector<float>						   outsideVertexData;
+	std::vector<float>						   insideVertexData;
 	std::vector<float>						   modelData;
 	bool									   isChosenFaceGathing;
 	std::vector<float>						   textureData;
 	std::vector<float>						   circleData;
+	std::vector<float>						   solvedData;
+
 	void Render_Solid();
 	void Render_SolidWireframe();
 	void Render_Wireframe();

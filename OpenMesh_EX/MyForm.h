@@ -28,6 +28,8 @@ unsigned int pickVAO, pickVBO;
 unsigned int modelVAO, modelVBO;
 unsigned int chosenVAO, chosenVBO;
 unsigned int outsideVAO, outsideVBO;
+unsigned int insideVAO, insideVBO;
+unsigned int solvedVAO, solvedVBO;
 glm::mat4 view;
 glm::mat4 projection;
 /////////////////// screen2 分隔線
@@ -502,12 +504,26 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 		mappingShader->Use();
 		//glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "view"), 1, false, &view[0][0]);
 		//glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "projection"), 1, false, &projection[0][0]);
+
+		glBindVertexArray(insideVAO);
+		glBindBuffer(GL_ARRAY_BUFFER, insideVBO);
+
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->insideVertexData.size(), mesh->insideVertexData.data());
+		glPointSize(1.0f);
+		glDrawArrays(GL_POINTS, 0, mesh->insideVertex.size());
+
+		glBindVertexArray(solvedVAO);
+		glBindBuffer(GL_ARRAY_BUFFER, solvedVBO);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->solvedData.size(), mesh->solvedData.data());
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		glDrawArrays(GL_TRIANGLES, 0, mesh->solvedData.size() / 3);
+
 		glBindVertexArray(mappingVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, mappingVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->textureData.size(), mesh->textureData.data());
 		glLineWidth(3.0f);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		glDrawArrays(GL_TRIANGLES, 0, mesh->textureData.size() / 3);
+		//glDrawArrays(GL_TRIANGLES, 0, mesh->textureData.size() / 3);
 
 		glBindVertexArray(circleVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, circleVBO);
@@ -647,10 +663,26 @@ private: System::Void openModelDialog_FileOk(System::Object^  sender, System::Co
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 
+	glGenVertexArrays(1, &solvedVAO);
+	glGenBuffers(1, &solvedVBO);
+	glBindVertexArray(solvedVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, solvedVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
 	glGenVertexArrays(1, &outsideVAO);
 	glGenBuffers(1, &outsideVBO);
 	glBindVertexArray(outsideVAO);
 	glBindBuffer(GL_ARRAY_BUFFER, outsideVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+	glGenVertexArrays(1, &insideVAO);
+	glGenBuffers(1, &insideVBO);
+	glBindVertexArray(insideVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, insideVBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);

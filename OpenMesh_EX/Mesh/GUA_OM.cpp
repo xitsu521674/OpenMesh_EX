@@ -653,6 +653,11 @@ void Tri_Mesh::generateChosenData() {
 	}
 }
 void Tri_Mesh::computeTextureCoordinate() {
+	OpenMesh::VPropHandleT<OpenMesh::Vec2d> newPos;
+	OpenMesh::HPropHandleT<double> weight;
+	add_property(newPos, "newPos");
+	add_property(weight, "weight");
+
 	textureData.clear();
 	float modelLength = 0;
 	for (int i = 0; i < orderedOutsideVertex.size(); ++i) {
@@ -670,17 +675,12 @@ void Tri_Mesh::computeTextureCoordinate() {
 	float radius = 0.7f;
 	const float D2R = 0.0174532925f;
 	float zPos = 0;
-	for (float i = 0; i < 360; i+=0.5f) {
-		circleData.push_back(radius * cos(i * D2R));
-		circleData.push_back(radius * sin(i * D2R));
-		circleData.push_back(zPos);
-	}
-	std::vector<Point> contourCoordinate;
+
 	Point pos;
 	pos[0] = radius * cos(0);
 	pos[1] = radius * sin(0);
-	pos[2] = zPos;
-	contourCoordinate.push_back(pos);
+	property(newPos, orderedOutsideVertex[0]) = OpenMesh::Vec2d(pos[0], pos[1]);
+	
 	
 	float accDegree = 0;
 
@@ -689,40 +689,179 @@ void Tri_Mesh::computeTextureCoordinate() {
 		Point p2 = point(orderedOutsideVertex[i - 1]);
 		float currentLength = (p1 - p2).norm();
 		accDegree += currentLength / modelLength * 360.0f;
-		std::cout << accDegree << " ";
 		pos[0] = (radius * cos(accDegree * D2R));
 		pos[1] = (radius * sin(accDegree * D2R));
-		pos[2] = zPos;
-		contourCoordinate.push_back(pos);
+		property(newPos, orderedOutsideVertex[i]) = OpenMesh::Vec2d(pos[0], pos[1]);
 	}
-	std::cout << "\n";
-	pos[0] = radius * cos(0);
-	pos[1] = radius * sin(0);
-	pos[2] = zPos;
-	contourCoordinate.push_back(pos);
 
-	for (int i = 0; i < contourCoordinate.size()-1; ++i) {
-		if (contourCoordinate[i][0] < contourCoordinate[i + 1][0]) {
-			textureData.push_back(contourCoordinate[i][0]);
-			textureData.push_back(contourCoordinate[i][1]);
-			textureData.push_back(contourCoordinate[i][2]);
+	//開始計算各half edge 的weight
+	for (VertexHandle _vh : insideVertex) {
+		VOHIter voh_it;
+		std::vector<HHandle> HHs;
+		for (voh_it = voh_iter(_vh); voh_it; ++voh_it) {
+			HHs.push_back(voh_it.handle());
+		}
+		for (int i = 0; i < HHs.size(); ++i) {
+			HHandle lasthh, curhh, nxthh;
+			if (i == 0) {
+				lasthh = HHs[HHs.size() - 1];
+				curhh = HHs[0];
+				nxthh = HHs[1];
+			}
+			else
+			{
+				lasthh = HHs[i-1];
+				curhh = HHs[i];
+				nxthh = HHs[(1+1)%HHs.size()];
+			}
+			Point ori = point(from_vertex_handle(curhh));
+			Point p1 = point(to_vertex_handle(lasthh));
+			Point p2 = point(to_vertex_handle(curhh));
+			Point p3 = point(to_vertex_handle(nxthh));
+			float angBeta,angGamma;
+			Point edge1 = ori - p1;
+			edge1.normalize();
+			Point edge2 = p2 - p1;
+			edge2.normalize();
+			angBeta = std::acos(OpenMesh::dot(edge1, edge2));
 
-			textureData.push_back(contourCoordinate[i+1][0]);
-			textureData.push_back(contourCoordinate[i+1][1]);
-			textureData.push_back(contourCoordinate[i+1][2]);
+			edge1 = p2 - p3;
+			edge1.normalize();
+			edge2 = ori - p3;
+			edge2.normalize();
+			angGamma = std::acos(OpenMesh::dot(edge1, edge2));
+
+			//property(weight, HHs[i]) = std::cos(angBeta) / std::sin(angBeta) + std::cos(angGamma) / std::sin(angGamma);
+			property(weight, HHs[i]) = 1;
+			std::cout << "weight:" << property(weight, HHs[i]) << "\n";
+		}
+	}
+	orderedInsideVertex.clear();
+	for (VHandle _vh : insideVertex) {
+		orderedInsideVertex.push_back(_vh);
+	}
+	std::cout << "insidevertex:" << orderedInsideVertex.size() << "\n";
+	//計算線性系統
+	if (orderedInsideVertex.size() > 0) {
+		Eigen::SparseMatrix<double> A(orderedInsideVertex.size(), orderedInsideVertex.size());
+		std::vector<Eigen::VectorXd> B;
+		B.resize(2);
+		B[0].resize(orderedInsideVertex.size());
+		B[1].resize(orderedInsideVertex.size());
+		B[0].setZero();
+		B[1].setZero();
+
+		for (int i = 0; i < orderedInsideVertex.size(); ++i) {
+			A.insert(i, i) = 1.0;
+			VOHIter voh_it;
+			for (voh_it = voh_iter(orderedInsideVertex[i]); voh_it; ++voh_it) {
+				bool find = false;
+				VertexHandle _vh = to_vertex_handle(voh_it);
+				for (int j = 0; j < orderedInsideVertex.size(); ++j) {
+					if (_vh == orderedInsideVertex[j]) {
+						A.insert(i, j) = -property(weight, voh_it);
+						find = true;
+						break;
+					}
+				}
+				for (int j = 0; j < orderedOutsideVertex.size(); ++j) {
+					if (find) {
+						break;
+					}
+					if (_vh == orderedOutsideVertex[j]) {
+						OpenMesh::Vec2d pos = property(newPos, orderedOutsideVertex[j]);
+						std::cout << "get outsider vertex " << j << " :" << pos[0] << " " << pos[1] << "\n";
+						B[0][i] += property(weight, voh_it) * pos[0];
+						B[1][i] += property(weight, voh_it) * pos[1];
+						break;
+					}
+				}
+			}
+		}
+		A.makeCompressed();
+		Eigen::SparseQR<Eigen::SparseMatrix<double>, Eigen::COLAMDOrdering<int>> linearSolver;
+		linearSolver.compute(A);
+		std::vector<Eigen::VectorXd> X;
+		X.resize(2);
+		X[0] = linearSolver.solve(B[0]);
+		X[1] = linearSolver.solve(B[1]);
+
+		std::cout << "show A matrix:\n";
+		for (int i = 0; i < orderedInsideVertex.size(); ++i) {
+			for (int j = 0; j < orderedInsideVertex.size(); ++j) {
+				std::cout << A.coeff(i, j) << " ";
+			}
+			std::cout << "\n";
+		}
+		std::cout << "show matrix B:\n";
+		for (int j = 0; j < orderedInsideVertex.size(); ++j) {
+			std::cout << B[0][j] << " " << B[j];
+		}
+		std::cout << "\n";
+		std::cout << "show matrix X:\n";
+		for (int j = 0; j < orderedInsideVertex.size(); ++j) {
+			std::cout << X[0][j] << " " << X[j];
+		}
+		std::cout << "\n";
+
+		insideVertexData.clear();
+		for (int i = 0; i < orderedInsideVertex.size(); ++i) {
+			OpenMesh::Vec2d pos;
+			pos[0] = X[0][i];
+			pos[1] = X[1][i];
+			property(newPos, orderedInsideVertex[i]) = pos;
+			insideVertexData.push_back(pos[0]);
+			insideVertexData.push_back(pos[1]);
+			insideVertexData.push_back(0);
+		}
+	}
+	// 重組新座標
+	solvedData.clear();
+	for (int offset : chosenFace)
+	{
+		FaceHandle _fh = face_handle(offset);
+		FVIter fv_it;
+		for (fv_it = fv_iter(_fh); fv_it; ++fv_it)
+		{
+			VertexHandle _vh = fv_it.handle();
+			OpenMesh::Vec2d pos = property(newPos, _vh);
+			solvedData.push_back(pos[0]);
+			solvedData.push_back(pos[1]);
+			solvedData.push_back(0);
+		}
+	}
+	//準備當外框的圓圈
+	for (float i = 0; i < 360; i += 0.5f) {
+		circleData.push_back(radius * cos(i * D2R));
+		circleData.push_back(radius * sin(i * D2R));
+		circleData.push_back(zPos);
+	}
+
+	//準備外圈座標用來畫的
+	for (int i = 0; i < orderedOutsideVertex.size() - 1; ++i) {
+		OpenMesh::Vec2d curPos = property(newPos, orderedOutsideVertex[i]);
+		OpenMesh::Vec2d nxtPos = property(newPos, orderedOutsideVertex[i + 1]);
+		if (curPos[0] < nxtPos[0]) {
+			textureData.push_back(curPos[0]);
+			textureData.push_back(curPos[1]);
+			textureData.push_back(zPos);
+
+			textureData.push_back(nxtPos[0]);
+			textureData.push_back(nxtPos[1]);
+			textureData.push_back(zPos);
 
 			textureData.push_back(0);
 			textureData.push_back(0);
 			textureData.push_back(zPos);
 		}
 		else {
-			textureData.push_back(contourCoordinate[i + 1][0]);
-			textureData.push_back(contourCoordinate[i + 1][1]);
-			textureData.push_back(contourCoordinate[i + 1][2]);
+			textureData.push_back(nxtPos[0]);
+			textureData.push_back(nxtPos[1]);
+			textureData.push_back(zPos);
 
-			textureData.push_back(contourCoordinate[i][0]);
-			textureData.push_back(contourCoordinate[i][1]);
-			textureData.push_back(contourCoordinate[i][2]);
+			textureData.push_back(curPos[0]);
+			textureData.push_back(curPos[1]);
+			textureData.push_back(zPos);
 
 			textureData.push_back(0);
 			textureData.push_back(0);

@@ -46,12 +46,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\OpenMesh-5.2\src;..\OpenMesh-5.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\OpenMesh-5.2\src;..\OpenMesh-5.2\include;..\Eigen-3.2.8\;$(IncludePath)</IncludePath>
     <LibraryPath>..\OpenMesh-5.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\OpenMesh-5.2\src;..\OpenMesh-5.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\OpenMesh-5.2\src;..\OpenMesh-5.2\include;..\Eigen-3.2.8\;$(IncludePath)</IncludePath>
     <LibraryPath>..\OpenMesh-5.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

@@ -6,3 +6,7 @@ F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMes
 F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.MyForm.resources
 F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.GenerateResource.cache
 F:\基礎圖學\CH-10\OpenMesh\OpenMesh_EX\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.CopyComplete
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.AssemblyReference.cache
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.MyForm.resources
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.GenerateResource.cache
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Debug\OpenMesh_EX.vcxproj.CopyComplete

@@ -667,9 +667,9 @@ void Tri_Mesh::computeTextureCoordinate() {
 			modelLength += (p1 - p2).norm();
 		}
 	}
-	float radius = 5.0f;
+	float radius = 0.7f;
 	const float D2R = 0.0174532925f;
-	float zPos = 5;
+	float zPos = 0;
 	for (float i = 0; i < 360; i+=0.5f) {
 		circleData.push_back(radius * cos(i * D2R));
 		circleData.push_back(radius * sin(i * D2R));

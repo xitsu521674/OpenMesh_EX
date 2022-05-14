@@ -20,7 +20,10 @@ Shader* pickShader = nullptr;
 Shader* modelShader = nullptr;
 Shader* chosenShader = nullptr;
 unsigned int fbo, fboColor, fboDepth;
-unsigned int quadVAO, quadVBO;
+unsigned int s1fbo, s1fboColor, s1fboDepth;
+unsigned int s2fbo, s2fboColor, s2fboDepth;
+unsigned int LquadVAO, LquadVBO;
+unsigned int RquadVAO, RquadVBO;
 unsigned int pickVAO, pickVBO;
 unsigned int modelVAO, modelVBO;
 unsigned int chosenVAO, chosenVBO;
@@ -35,13 +38,23 @@ enum Choosemode {
 	VERTEX,
 	FACE,
 }choosemode;
-float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
+float LquadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
 		// positions   // texCoords
 		-1.0f,  1.0f,  0.0f, 1.0f,
 		-1.0f, -1.0f,  0.0f, 0.0f,
-		 1.0f, -1.0f,  1.0f, 0.0f,
+		 0.0f, -1.0f,  1.0f, 0.0f,
 
 		-1.0f,  1.0f,  0.0f, 1.0f,
+		 0.0f, -1.0f,  1.0f, 0.0f,
+		 0.0f,  1.0f,  1.0f, 1.0f
+};
+float RquadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
+		// positions   // texCoords
+		 0.0f,  1.0f,  0.0f, 1.0f,
+		 0.0f, -1.0f,  0.0f, 0.0f,
+		 1.0f, -1.0f,  1.0f, 0.0f,
+
+		 0.0f,  1.0f,  0.0f, 1.0f,
 		 1.0f, -1.0f,  1.0f, 0.0f,
 		 1.0f,  1.0f,  1.0f, 1.0f
 };
@@ -259,7 +272,7 @@ namespace OpenMesh_EX {
 			hkcoglPanelPixelFormat1->Alpha_Buffer_Bits = HKOGLPanel::HKCOGLPanelPixelFormat::PIXELBITS::BITS_0;
 			hkcoglPanelPixelFormat1->Stencil_Buffer_Bits = HKOGLPanel::HKCOGLPanelPixelFormat::PIXELBITS::BITS_0;
 			this->hkoglPanelControl1->Pixel_Format = hkcoglPanelPixelFormat1;
-			this->hkoglPanelControl1->Size = System::Drawing::Size(394, 594);
+			this->hkoglPanelControl1->Size = System::Drawing::Size(794, 594);
 			this->hkoglPanelControl1->TabIndex = 2;
 			this->hkoglPanelControl1->Load += gcnew System::EventHandler(this, &MyForm::hkoglPanelControl1_Load);
 			this->hkoglPanelControl1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::hkoglPanelControl1_Paint);
@@ -270,9 +283,7 @@ namespace OpenMesh_EX {
 			// 
 			// tableLayoutPanel1
 			// 
-			this->tableLayoutPanel1->ColumnCount = 2;
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+			this->tableLayoutPanel1->ColumnCount = 1;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->tableLayoutPanel1->Controls->Add(this->hkoglPanelControl1, 0, 0);
@@ -334,11 +345,21 @@ private: System::Void hkoglPanelControl1_Load(System::Object^  sender, System::E
 	glUseProgram(0);
 
 	
-	glGenVertexArrays(1, &quadVAO);
-	glGenBuffers(1, &quadVBO);
-	glBindVertexArray(quadVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
+	glGenVertexArrays(1, &LquadVAO);
+	glGenBuffers(1, &LquadVBO);
+	glBindVertexArray(LquadVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, LquadVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(LquadVertices), &LquadVertices, GL_STATIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+
+	glGenVertexArrays(1, &RquadVAO);
+	glGenBuffers(1, &RquadVBO);
+	glBindVertexArray(RquadVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, RquadVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(RquadVertices), &RquadVertices, GL_STATIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(1);
@@ -362,6 +383,48 @@ private: System::Void hkoglPanelControl1_Load(System::Object^  sender, System::E
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 		std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+
+	//screen1 fbo
+	glGenFramebuffers(1, &s1fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, s1fbo);
+	glGenTextures(1, &s1fboColor);
+	glBindTexture(GL_TEXTURE_2D, s1fboColor);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_R32UI, hkoglPanelControl1->Width, hkoglPanelControl1->Height, 0, GL_RED_INTEGER, GL_UNSIGNED_INT, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+
+	glGenRenderbuffers(1, &s1fboDepth);
+	glBindRenderbuffer(GL_RENDERBUFFER, s1fboDepth);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, hkoglPanelControl1->Width, hkoglPanelControl1->Height); // use a single renderbuffer object for both a depth AND stencil buffer.
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, s1fboDepth); // now actually attach it
+
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, s1fboColor, 0);
+
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+
+
+	//screen2 fbo
+	glGenFramebuffers(1, &s2fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, s2fbo);
+	glGenTextures(1, &s2fboColor);
+	glBindTexture(GL_TEXTURE_2D, s2fboColor);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_R32UI, hkoglPanelControl1->Width , hkoglPanelControl1->Height, 0, GL_RED_INTEGER, GL_UNSIGNED_INT, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+
+	glGenRenderbuffers(1, &s2fboDepth);
+	glBindRenderbuffer(GL_RENDERBUFFER, s2fboDepth);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, hkoglPanelControl1->Width , hkoglPanelControl1->Height); // use a single renderbuffer object for both a depth AND stencil buffer.
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, s2fboDepth); // now actually attach it
+
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, s2fboColor, 0);
+
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glBindRenderbuffer(GL_RENDERBUFFER, 0);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -394,7 +457,7 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 		glDrawArrays(GL_TRIANGLES, 0, mesh->vertexNumber);
 	
 	glUseProgram(0);
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glBindFramebuffer(GL_FRAMEBUFFER, s1fbo);
 
 	glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -428,24 +491,33 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 		glPointSize(5);
 		glDrawArrays(GL_POINTS, 0, mesh->outsideVertex.size());
 
+
+		glUseProgram(0);
+		glBindFramebuffer(GL_FRAMEBUFFER, s2fbo);
+
+		glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 		mesh->computeTextureCoordinate();
 		mappingShader->Use();
-		glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "view"), 1, false, &view[0][0]);
-		glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "projection"), 1, false, &projection[0][0]);
+		//glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "view"), 1, false, &view[0][0]);
+		//glUniformMatrix4fv(glGetUniformLocation(mappingShader->Program, "projection"), 1, false, &projection[0][0]);
 		glBindVertexArray(mappingVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, mappingVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->textureData.size(), mesh->textureData.data());
-		
+		glLineWidth(3.0f);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glDrawArrays(GL_TRIANGLES, 0, mesh->textureData.size() / 3);
 
 		glBindVertexArray(circleVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, circleVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->circleData.size(), mesh->circleData.data());
+		glLineWidth(3.0f);
 		glDrawArrays(GL_LINES, 0, mesh->circleData.size() / 3);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		
-
+		glLineWidth(1.0f);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	}else if(mesh && mesh->chosenVertexDraw && choosemode == Choosemode::VERTEX){
 		mesh->chosenFace.clear();
@@ -461,17 +533,21 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 		glDrawArrays(GL_POINTS, 0, 1);
 	}
 	glUseProgram(0);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	
-	/*
 	glDisable(GL_DEPTH_TEST);
-	glClearColor(1, 0, 0, 1);
+	glClearColor(1, 1, 1, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	screenShader->Use();
-	glBindVertexArray(quadVAO);
-	glBindTexture(GL_TEXTURE_2D, fboColor);
-	glDrawArrays(GL_TRIANGLES, 0, 6);    
+	glBindVertexArray(LquadVAO);
+	glBindTexture(GL_TEXTURE_2D, s1fboColor);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+
+	glBindVertexArray(RquadVAO);
+	glBindTexture(GL_TEXTURE_2D, s2fboColor);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glUseProgram(0);
-	*/
+	
 	
 }                
 private: System::Void hkoglPanelControl1_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
@@ -621,7 +697,7 @@ private: System::Void hkoglPanelControl1_MouseClick(System::Object^ sender, Syst
 		glBindFramebuffer(GL_READ_FRAMEBUFFER, fbo);
 		
 
-		int windowX = e->X;
+		int windowX = e->X * 2;
 		int windowY = hkoglPanelControl1->Height - e->Y;
 
 		glReadBuffer(GL_COLOR_ATTACHMENT0);

@@ -581,37 +581,60 @@ void Tri_Mesh::generateChosenData() {
 			chosenFaceData.push_back(vertexData[offset * 9 + i]);
 		}
 	}
-
 	//將選取面的點分為外部與內部
 	outsideVertex.clear();
 	insideVertex.clear();
-	for (VertexHandle _vh : chosenVertices)
+	
+	std::map<std::pair<int,int>,int> edgeCount;
+	for (int offset : chosenFace)
 	{
-		if (!isChosenFaceGathing)
-			return;
-		int vvCount = 0;
-		int vfCount = 0;
-		VVIter vv_it;
-		for (vv_it = vv_iter(_vh); vv_it; ++vv_it) {
-			if (chosenVertices.find(vv_it.handle()) != chosenVertices.end()) {
-				vvCount++;
+		FaceHandle _fh = face_handle(offset);
+		std::vector<int> vtx;
+		for (fv_it = fv_iter(_fh); fv_it; ++fv_it)
+		{
+			VertexHandle _vh = fv_it.handle();
+			vtx.push_back(_vh.idx());
+		}
+		for (int i = 0; i < vtx.size(); ++i) {
+			for (int j = i + 1; j < vtx.size(); ++j) {
+				int v1 = vtx[i];
+				int v2 = vtx[j];
+				std::pair<int, int> p;
+				p.first = v1 < v2 ? v1 : v2;
+				p.second = v1 > v2 ? v1 : v2;
+				edgeCount[p]++;
 			}
 		}
-		VFIter vf_it;
-		for (vf_it = vf_iter(_vh); vf_it; ++vf_it) {
-			if (chosenFace.find(vf_it.handle().idx()) != chosenFace.end()) {
-				vfCount++;
+	}
+	std::cout << "edge number:" << edgeCount.size() << "\n";
+	std::map<int, int> outsideVerticesAppearTimes;
+	for (std::pair<std::pair<int,int>, int> p : edgeCount) {
+		if (p.second == 1) {
+			outsideVertex.insert(p.first.first);
+			outsideVertex.insert(p.first.second);
+			outsideVerticesAppearTimes[p.first.first]++;
+			outsideVerticesAppearTimes[p.first.second]++;
+		}
+	}
+	std::set<std::pair<int, int>> outsideEdges;
+	
+
+	for (std::pair<std::pair<int, int>, int> p : edgeCount) {
+		if (p.second != 1) {
+			if (outsideVertex.find(p.first.first) == outsideVertex.end()) {
+				insideVertex.insert(vertex_handle(p.first.first));
+			}
+			if (outsideVertex.find(p.first.second) == outsideVertex.end()) {
+				insideVertex.insert(vertex_handle(p.first.second));
 			}
 		}
-		if (chosenFace.size() > 1 && vfCount == 0) {
-			//有單獨的面
-			isChosenFaceGathing = false;
-		}
-		else if (vvCount == vfCount) {
-			insideVertex.insert(_vh);
-		}
-		else {
-			outsideVertex.insert(_vh.idx());
+		//篩選出外部edge
+		else if (p.second == 1) {
+			int v1 = p.first.first;
+			int v2 = p.first.second;
+			if (outsideVerticesAppearTimes[v1] == 2 && outsideVerticesAppearTimes[v2] == 2) {
+				outsideEdges.insert(p.first);
+			}
 		}
 	}
 	//將外部點排成連續
@@ -620,20 +643,35 @@ void Tri_Mesh::generateChosenData() {
 	int currentOrdering = *(outsideVertex.begin());
 	orderedOutsideVertex.push_back(vertex_handle(currentOrdering));
 	usedVertex.insert(currentOrdering);
-	
 	int record = usedVertex.size();
-
 	while (usedVertex.size()!=outsideVertex.size()) {
 		record = usedVertex.size();
 		VVIter vv_it;
-		for (vv_it = vv_iter(vertex_handle(currentOrdering)); vv_it; vv_it++) {
-			if (outsideVertex.find(vv_it.handle().idx()) != outsideVertex.end()) {
-				if (usedVertex.find(vv_it.handle().idx()) == usedVertex.end()) {
-					currentOrdering = vv_it.handle().idx();
-					usedVertex.insert(currentOrdering);
-					orderedOutsideVertex.push_back(vertex_handle(currentOrdering));
-					break;
-				}
+		/*std::cout << "find vertex connect to " << currentOrdering << "\n";
+		std::cout << "remain candidate:";
+		for (int val : outsideVertex) {
+			if (usedVertex.find(val) == usedVertex.end()) {
+				std::cout << val << " ";
+			}
+		}
+		std::cout << "\n";*/
+		for (auto iter = outsideEdges.begin(); iter != outsideEdges.end(); ++iter) {
+			int v1 = (*iter).first;
+			int v2 = (*iter).second;
+			//std::cout << "try edge " << v1 << " " << v2 << "\n";
+			if (v1 == currentOrdering) {
+				currentOrdering = v2;
+				usedVertex.insert(currentOrdering);
+				orderedOutsideVertex.push_back(vertex_handle(currentOrdering));
+				outsideEdges.erase(iter);
+				break;
+			}
+			else if (v2 == currentOrdering) {
+				currentOrdering = v1;
+				usedVertex.insert(currentOrdering);
+				orderedOutsideVertex.push_back(vertex_handle(currentOrdering));
+				outsideEdges.erase(iter);
+				break;
 			}
 		}
 		if (record == usedVertex.size()) {
@@ -641,6 +679,8 @@ void Tri_Mesh::generateChosenData() {
 			break;
 		}
 	}
+	std::cout << "Outsidevertexs:" << outsideVertex.size() << "\n";
+	std::cout << "orderedOutsidevertexs:" << orderedOutsideVertex.size() << "\n";
 	std::cout << "Is grouping:" << isChosenFaceGathing << "\n";
 
 	//
@@ -653,13 +693,16 @@ void Tri_Mesh::generateChosenData() {
 	}
 }
 void Tri_Mesh::computeTextureCoordinate() {
+	if (!isChosenFaceGathing) {
+		return;
+	}
 	OpenMesh::VPropHandleT<OpenMesh::Vec2d> newPos;
 	OpenMesh::HPropHandleT<double> weight;
 	add_property(newPos, "newPos");
 	add_property(weight, "weight");
 
 	textureData.clear();
-	float modelLength = 0;
+	double modelLength = 0;
 	for (int i = 0; i < orderedOutsideVertex.size(); ++i) {
 		if (i == orderedOutsideVertex.size() - 1) {
 			Point p1 = point(orderedOutsideVertex[0]);
@@ -672,28 +715,42 @@ void Tri_Mesh::computeTextureCoordinate() {
 			modelLength += (p1 - p2).norm();
 		}
 	}
-	float radius = 0.7f;
-	const float D2R = 0.0174532925f;
-	float zPos = 0;
-
 	Point pos;
-	pos[0] = radius * cos(0);
-	pos[1] = radius * sin(0);
+	pos[0] = 0;
+	pos[1] = 0;
 	property(newPos, orderedOutsideVertex[0]) = OpenMesh::Vec2d(pos[0], pos[1]);
-	
-	
-	float accDegree = 0;
-
-	for (int i = 1; i < orderedOutsideVertex.size(); ++i) {
+	double accLength = 0.0f;
+	double oneSideLength = modelLength / 4.0;
+	for (int i = 1; i < orderedOutsideVertex.size(); ++i){
 		Point p1 = point(orderedOutsideVertex[i]);
 		Point p2 = point(orderedOutsideVertex[i - 1]);
 		float currentLength = (p1 - p2).norm();
-		accDegree += currentLength / modelLength * 360.0f;
-		pos[0] = (radius * cos(accDegree * D2R));
-		pos[1] = (radius * sin(accDegree * D2R));
+		accLength += currentLength;
+		switch ((int)(accLength/oneSideLength))
+		{
+		case 0:
+			pos[0] = accLength;
+			pos[1] = 0;
+			break;
+		case 1:
+			pos[0] = oneSideLength;
+			pos[1] = accLength-oneSideLength;
+			break;
+		case 2:
+			pos[0] = 3.0*oneSideLength-accLength;
+			pos[1] = oneSideLength;
+			break;
+		case 3:
+			pos[0] = 0;
+			pos[1] = 4.0*oneSideLength-accLength;
+			break;
+		default:
+			break;
+		}
+		pos[0] /= oneSideLength;
+		pos[1] /= oneSideLength;
 		property(newPos, orderedOutsideVertex[i]) = OpenMesh::Vec2d(pos[0], pos[1]);
 	}
-
 	//開始計算各half edge 的weight
 	for (VertexHandle _vh : insideVertex) {
 		VOHIter voh_it;
@@ -701,6 +758,7 @@ void Tri_Mesh::computeTextureCoordinate() {
 		for (voh_it = voh_iter(_vh); voh_it; ++voh_it) {
 			HHs.push_back(voh_it.handle());
 		}
+		double totalWeight = 0.0;
 		for (int i = 0; i < HHs.size(); ++i) {
 			HHandle lasthh, curhh, nxthh;
 			if (i == 0) {
@@ -708,33 +766,68 @@ void Tri_Mesh::computeTextureCoordinate() {
 				curhh = HHs[0];
 				nxthh = HHs[1];
 			}
+			else if(i==HHs.size() - 1)
+			{
+				lasthh = HHs[i - 1];
+				curhh = HHs[i];
+				nxthh = HHs[0];
+			}
 			else
 			{
-				lasthh = HHs[i-1];
+				lasthh = HHs[i - 1];
 				curhh = HHs[i];
-				nxthh = HHs[(1+1)%HHs.size()];
+				nxthh = HHs[i + 1];
 			}
 			Point ori = point(from_vertex_handle(curhh));
 			Point p1 = point(to_vertex_handle(lasthh));
 			Point p2 = point(to_vertex_handle(curhh));
 			Point p3 = point(to_vertex_handle(nxthh));
-			float angBeta,angGamma;
+			double angBeta,angGamma;
 			Point edge1 = ori - p1;
 			edge1.normalize();
 			Point edge2 = p2 - p1;
 			edge2.normalize();
-			angBeta = std::acos(OpenMesh::dot(edge1, edge2));
+			double dot1 = OpenMesh::dot(edge1, edge2);
+			if (dot1 >= 1.0) {
+				angBeta = 0;
+			}
+			else if (dot1 <= -1.0) {
+				angBeta = 3.14159265358979323846;
+			}
+			else {
+				angBeta = std::acos(dot1);
+			}
+			
+			
 
-			edge1 = p2 - p3;
-			edge1.normalize();
-			edge2 = ori - p3;
-			edge2.normalize();
-			angGamma = std::acos(OpenMesh::dot(edge1, edge2));
-
-			//property(weight, HHs[i]) = std::cos(angBeta) / std::sin(angBeta) + std::cos(angGamma) / std::sin(angGamma);
-			property(weight, HHs[i]) = 1;
+			Point edge3 = p2 - p3;
+			edge3.normalize();
+			Point edge4 = ori - p3;
+			edge4.normalize();
+			double dot2 = OpenMesh::dot(edge3, edge4);
+			if (dot2 >= 1.0) {
+				angGamma = 0;
+			}
+			else if (dot2 <= -1.0) {
+				angGamma = 3.14159265358979323846;
+			}
+			else {
+				angGamma = std::acos(dot2);
+				if (isnan(angGamma))
+					std::cout << "the dot cause nan is " << dot2 << "\n";
+			}
+			
+			property(weight, HHs[i]) =( std::cos(angBeta) / std::sin(angBeta) + std::cos(angGamma) / std::sin(angGamma));
+			totalWeight += property(weight, HHs[i]);
+			//property(weight, HHs[i]) = 1;
+			//std::cout << "ANGLE:" << angBeta << " " << angGamma << "\n";
+			//std::cout << "cos/sin:" << std::cos(angBeta) << "/" << std::sin(angBeta) << ":" << std::cos(angGamma) << "/" << std::sin(angGamma) << "\n";
 			std::cout << "weight:" << property(weight, HHs[i]) << "\n";
 		}
+		for (int i = 0; i < HHs.size(); ++i) {
+			property(weight, HHs[i]) = property(weight, HHs[i]) / totalWeight;
+		}
+
 	}
 	orderedInsideVertex.clear();
 	for (VHandle _vh : insideVertex) {
@@ -771,6 +864,7 @@ void Tri_Mesh::computeTextureCoordinate() {
 					if (_vh == orderedOutsideVertex[j]) {
 						OpenMesh::Vec2d pos = property(newPos, orderedOutsideVertex[j]);
 						std::cout << "get outsider vertex " << j << " :" << pos[0] << " " << pos[1] << "\n";
+						std::cout << "show weight:" << property(weight, voh_it) << "\n";
 						B[0][i] += property(weight, voh_it) * pos[0];
 						B[1][i] += property(weight, voh_it) * pos[1];
 						break;
@@ -795,14 +889,13 @@ void Tri_Mesh::computeTextureCoordinate() {
 		}
 		std::cout << "show matrix B:\n";
 		for (int j = 0; j < orderedInsideVertex.size(); ++j) {
-			std::cout << B[0][j] << " " << B[j];
+			std::cout << B[0][j] << " " << B[1][j] << "\n";
 		}
-		std::cout << "\n";
+		
 		std::cout << "show matrix X:\n";
 		for (int j = 0; j < orderedInsideVertex.size(); ++j) {
-			std::cout << X[0][j] << " " << X[j];
+			std::cout << X[0][j] << " " << X[1][j] << "\n";
 		}
-		std::cout << "\n";
 
 		insideVertexData.clear();
 		for (int i = 0; i < orderedInsideVertex.size(); ++i) {
@@ -831,14 +924,28 @@ void Tri_Mesh::computeTextureCoordinate() {
 		}
 	}
 	//準備當外框的圓圈
-	for (float i = 0; i < 360; i += 0.5f) {
-		circleData.push_back(radius * cos(i * D2R));
-		circleData.push_back(radius * sin(i * D2R));
-		circleData.push_back(zPos);
+	for (float i = 0; i < 1; i += 0.01f) {
+		circleData.push_back(i);
+		circleData.push_back(0);
+		circleData.push_back(0);
 	}
-
+	for (float i = 0; i < 1; i += 0.01f) {
+		circleData.push_back(1);
+		circleData.push_back(i);
+		circleData.push_back(0);
+	}
+	for (float i = 0; i < 1; i += 0.01f) {
+		circleData.push_back(1-i);
+		circleData.push_back(1);
+		circleData.push_back(0);
+	}
+	for (float i = 0; i < 1; i += 0.01f) {
+		circleData.push_back(0);
+		circleData.push_back(1-i);
+		circleData.push_back(0);
+	}
 	//準備外圈座標用來畫的
-	for (int i = 0; i < orderedOutsideVertex.size() - 1; ++i) {
+	/*for (int i = 0; i < orderedOutsideVertex.size() - 1; ++i) {
 		OpenMesh::Vec2d curPos = property(newPos, orderedOutsideVertex[i]);
 		OpenMesh::Vec2d nxtPos = property(newPos, orderedOutsideVertex[i + 1]);
 		if (curPos[0] < nxtPos[0]) {
@@ -867,7 +974,7 @@ void Tri_Mesh::computeTextureCoordinate() {
 			textureData.push_back(0);
 			textureData.push_back(zPos);
 		}
-	}
+	}*/
 
 }
 void Tri_Mesh::Render_Wireframe()

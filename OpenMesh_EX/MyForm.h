@@ -509,27 +509,30 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 		glBindBuffer(GL_ARRAY_BUFFER, insideVBO);
 
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->insideVertexData.size(), mesh->insideVertexData.data());
-		glPointSize(1.0f);
+		glPointSize(20.0f);
 		glDrawArrays(GL_POINTS, 0, mesh->insideVertex.size());
 
+		glDisable(GL_CULL_FACE);
 		glBindVertexArray(solvedVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, solvedVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->solvedData.size(), mesh->solvedData.data());
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glDrawArrays(GL_TRIANGLES, 0, mesh->solvedData.size() / 3);
+		glEnable(GL_CULL_FACE);
+
 
 		glBindVertexArray(mappingVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, mappingVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->textureData.size(), mesh->textureData.data());
 		glLineWidth(3.0f);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		//glDrawArrays(GL_TRIANGLES, 0, mesh->textureData.size() / 3);
 
 		glBindVertexArray(circleVAO);
 		glBindBuffer(GL_ARRAY_BUFFER, circleVBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->circleData.size(), mesh->circleData.data());
-		glLineWidth(3.0f);
-		glDrawArrays(GL_LINES, 0, mesh->circleData.size() / 3);
+		glLineWidth(1.0f);
+		glDrawArrays(GL_LINE_LOOP, 0, mesh->circleData.size() / 3);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		
 		glLineWidth(1.0f);

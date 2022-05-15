@@ -9,6 +9,7 @@
 #include <OpenMesh/Tools/Utils/getopt.h>
 #include <OpenMesh/Core/Mesh/IteratorsT.hh>
 #include <Eigen/Sparse>
+#include <algorithm>
 
 #include <windows.h>
 #include <gl/gl.h>

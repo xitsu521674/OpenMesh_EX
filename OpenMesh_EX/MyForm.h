@@ -8,6 +8,8 @@
 #include "DotNetUtilities.h"
 #include "Mesh/GUA_OM.h"
 #include "Mesh/DP.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "STB/stb_image.h"
 Tri_Mesh *mesh;
 
 float pitch = 0;
@@ -19,6 +21,7 @@ Shader* screenShader = nullptr;
 Shader* pickShader = nullptr;
 Shader* modelShader = nullptr;
 Shader* chosenShader = nullptr;
+Shader* patchedShader = nullptr;
 unsigned int fbo, fboColor, fboDepth;
 unsigned int s1fbo, s1fboColor, s1fboDepth;
 unsigned int s2fbo, s2fboColor, s2fboDepth;
@@ -30,12 +33,16 @@ unsigned int chosenVAO, chosenVBO;
 unsigned int outsideVAO, outsideVBO;
 unsigned int insideVAO, insideVBO;
 unsigned int solvedVAO, solvedVBO;
+unsigned int patchedVAO, patchedVBO;
 glm::mat4 view;
 glm::mat4 projection;
 /////////////////// screen2 分隔線
 Shader* mappingShader = nullptr;
 unsigned int mappingVAO, mappingVBO;
 unsigned int circleVAO, circleVBO;
+
+unsigned int checkboardTexID;
+bool drawPatched = false;
 enum Choosemode {
 	VERTEX,
 	FACE,
@@ -110,6 +117,42 @@ float cubeVertices[] = {
 	-0.5f,  0.5f,  0.5f,
 	-0.5f,  0.5f, -0.5f,
 };
+unsigned int loadTexture(char const* path)
+{
+	unsigned int textureID;
+	glGenTextures(1, &textureID);
+
+	int width, height, nrComponents;
+	unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
+	if (data)
+	{
+		GLenum format;
+		if (nrComponents == 1)
+			format = GL_RED;
+		else if (nrComponents == 3)
+			format = GL_RGB;
+		else if (nrComponents == 4)
+			format = GL_RGBA;
+
+		glBindTexture(GL_TEXTURE_2D, textureID);
+		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+		glGenerateMipmap(GL_TEXTURE_2D);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		stbi_image_free(data);
+	}
+	else
+	{
+		std::cout << "Texture failed to load at path: " << path << std::endl;
+		stbi_image_free(data);
+	}
+
+	return textureID;
+}
 namespace OpenMesh_EX {
 
 	using namespace System;
@@ -278,6 +321,7 @@ namespace OpenMesh_EX {
 			this->hkoglPanelControl1->TabIndex = 2;
 			this->hkoglPanelControl1->Load += gcnew System::EventHandler(this, &MyForm::hkoglPanelControl1_Load);
 			this->hkoglPanelControl1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::hkoglPanelControl1_Paint);
+			this->hkoglPanelControl1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::hkoglPanelControl1_KeyDown);
 			this->hkoglPanelControl1->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::hkoglPanelControl1_MouseClick);
 			this->hkoglPanelControl1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::hkoglPanelControl1_MouseDown);
 			this->hkoglPanelControl1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::hkoglPanelControl1_MouseMove);
@@ -308,6 +352,7 @@ namespace OpenMesh_EX {
 			this->Name = L"MyForm";
 			this->Text = L"OpenMesh_EX";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->tableLayoutPanel1->ResumeLayout(false);
@@ -324,7 +369,7 @@ private: System::Void hkoglPanelControl1_Load(System::Object^  sender, System::E
 	glEnable(GL_TEXTURE_2D);
 
 	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LEQUAL);
+	//glDepthFunc(GL_LEQUAL);
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -341,6 +386,9 @@ private: System::Void hkoglPanelControl1_Load(System::Object^  sender, System::E
 	modelShader = new Shader("..\\Shaders\\model.vert", NULL, NULL, NULL, "..\\Shaders\\model.frag");
 	chosenShader = new Shader("..\\Shaders\\chosen.vert", NULL, NULL, NULL, "..\\Shaders\\chosen.frag");
 	mappingShader = new Shader("..\\Shaders\\mapping.vert", NULL, NULL, NULL, "..\\Shaders\\mapping.frag");
+	patchedShader = new Shader("..\\Shaders\\patched.vert", NULL, NULL, NULL, "..\\Shaders\\patched.frag");
+
+	checkboardTexID = loadTexture("..\\Images\\checkerboard4.jpg");
 
 	screenShader->Use();
 	glUniform1i(glGetUniformLocation(screenShader->Program, "screenTexture"), 0);
@@ -478,20 +526,33 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 	
 	if (mesh&&mesh->chosenFace.size()>0&&choosemode==Choosemode::FACE) {
 		mesh->generateChosenData();
-		chosenShader->Use();
-		glUniformMatrix4fv(glGetUniformLocation(chosenShader->Program, "view"), 1, false, &view[0][0]);
-		glUniformMatrix4fv(glGetUniformLocation(chosenShader->Program, "projection"), 1, false, &projection[0][0]);
-		glBindVertexArray(chosenVAO);
-		glBindBuffer(GL_ARRAY_BUFFER, chosenVBO);
-		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->chosenFaceData.size(), mesh->chosenFaceData.data());
-		glDrawArrays(GL_TRIANGLES, 0, mesh->chosenFace.size()*3);
+		if (!drawPatched) {
+			chosenShader->Use();
+			glUniformMatrix4fv(glGetUniformLocation(chosenShader->Program, "view"), 1, false, &view[0][0]);
+			glUniformMatrix4fv(glGetUniformLocation(chosenShader->Program, "projection"), 1, false, &projection[0][0]);
+			glBindVertexArray(chosenVAO);
+			glBindBuffer(GL_ARRAY_BUFFER, chosenVBO);
+			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->chosenFaceData.size(), mesh->chosenFaceData.data());
+			glDrawArrays(GL_TRIANGLES, 0, mesh->chosenFace.size() * 3);
 
-		glBindVertexArray(outsideVAO);
-		glBindBuffer(GL_ARRAY_BUFFER, outsideVBO);
+			glBindVertexArray(outsideVAO);
+			glBindBuffer(GL_ARRAY_BUFFER, outsideVBO);
 
-		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->outsideVertexData.size(), mesh->outsideVertexData.data());
-		glPointSize(5);
-		glDrawArrays(GL_POINTS, 0, mesh->outsideVertex.size());
+			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->outsideVertexData.size(), mesh->outsideVertexData.data());
+			glPointSize(5);
+			glDrawArrays(GL_POINTS, 0, mesh->outsideVertex.size());
+		}
+		else {
+			patchedShader->Use();
+			glUniformMatrix4fv(glGetUniformLocation(patchedShader->Program, "view"), 1, false, &view[0][0]);
+			glUniformMatrix4fv(glGetUniformLocation(patchedShader->Program, "projection"), 1, false, &projection[0][0]);
+			glBindVertexArray(patchedVAO);
+			glBindBuffer(GL_ARRAY_BUFFER, patchedVBO);
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, checkboardTexID);
+			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * mesh->patchedModelData.size(), mesh->patchedModelData.data());
+			glDrawArrays(GL_TRIANGLES, 0, mesh->chosenFace.size() * 5);
+		}
 
 
 		glUseProgram(0);
@@ -554,19 +615,22 @@ private: System::Void hkoglPanelControl1_Paint(System::Object^  sender, System::
 	glUseProgram(0);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	
-	glDisable(GL_DEPTH_TEST);
-	glClearColor(1, 1, 1, 1);
-	glClear(GL_COLOR_BUFFER_BIT);
-	screenShader->Use();
-	glBindVertexArray(LquadVAO);
-	glBindTexture(GL_TEXTURE_2D, s1fboColor);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+		glDisable(GL_DEPTH_TEST);
+		glClearColor(1, 1, 1, 1);
+		glClear(GL_COLOR_BUFFER_BIT);
+		screenShader->Use();
+		glBindVertexArray(LquadVAO);
+		glBindTexture(GL_TEXTURE_2D, s1fboColor);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 
-	glBindVertexArray(RquadVAO);
-	glBindTexture(GL_TEXTURE_2D, s2fboColor);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
-	glUseProgram(0);
+		glBindVertexArray(RquadVAO);
+		glBindTexture(GL_TEXTURE_2D, s2fboColor);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 	
+
+	
+	glUseProgram(0);
+
 	
 }                
 private: System::Void hkoglPanelControl1_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
@@ -706,6 +770,18 @@ private: System::Void openModelDialog_FileOk(System::Object^  sender, System::Co
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 
+
+	glGenVertexArrays(1, &patchedVAO);
+	glGenBuffers(1, &patchedVBO);
+	glBindVertexArray(patchedVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, patchedVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->vertexData.size(), NULL, GL_DYNAMIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(sizeof(float) * 3));
+
+
 	hkoglPanelControl1->Invalidate();
 }
 private: System::Void saveModelToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
@@ -840,6 +916,27 @@ private: System::Void hkoglPanelControl2_Paint(System::Object^ sender, System::W
 	
 
 	glUseProgram(0);
+}
+private: System::Void MyForm_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	
+}
+private: System::Void hkoglPanelControl1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	switch (e->KeyCode)
+	{
+	case Keys::G:
+		if (!drawPatched) {
+			mesh->buildPatchedData();
+			std::cout << "build\n";
+			drawPatched = true;
+		}
+		else {
+			drawPatched = false;
+		}
+		hkoglPanelControl1->Invalidate();
+		break;
+	default:
+		break;
+	}
 }
 };
 }

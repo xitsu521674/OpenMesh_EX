@@ -81,5 +81,11 @@
     <None Include="..\Shaders\mapping.vert">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="..\Shaders\patched.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\patched.vert">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

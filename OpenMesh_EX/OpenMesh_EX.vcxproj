@@ -117,6 +117,8 @@
     <None Include="..\Shaders\mapping.vert" />
     <None Include="..\Shaders\model.frag" />
     <None Include="..\Shaders\model.vert" />
+    <None Include="..\Shaders\patched.frag" />
+    <None Include="..\Shaders\patched.vert" />
     <None Include="..\Shaders\pick.frag" />
     <None Include="..\Shaders\pick.vert" />
     <None Include="..\Shaders\screen.frag" />

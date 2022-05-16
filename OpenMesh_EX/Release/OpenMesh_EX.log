@@ -94,33 +94,24 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
 F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(577,28): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
 F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(593,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
 F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(595,28): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(706,20): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(710,35): warning C4244: '+=': conversion from 'Scalar' to 'float', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(707,20): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(727,20): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(730,23): warning C4244: 'initializing': conversion from 'Scalar' to 'float', possible loss of data
           with
           [
               Scalar=double
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(715,35): warning C4244: '+=': conversion from 'Scalar' to 'float', possible loss of data
-          with
-          [
-              Scalar=double
-          ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(730,20): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(733,23): warning C4244: 'initializing': conversion from 'Scalar' to 'float', possible loss of data
-          with
-          [
-              Scalar=double
-          ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(747,21): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(798,21): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(804,23): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(811,23): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(834,21): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(835,22): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(841,21): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(846,21): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(851,21): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(856,36): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(767,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(832,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(852,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(858,23): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(865,23): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(889,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(890,22): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(896,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(901,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(906,21): warning C4018: '<': signed/unsigned mismatch
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(913,36): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -129,7 +120,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(857,36): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(914,36): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -138,7 +129,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(871,30): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(929,30): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -147,7 +138,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(872,30): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(930,30): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -156,8 +147,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(884,20): warning C4018: '<': signed/unsigned mismatch
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(888,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(933,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -166,7 +156,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(889,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(934,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -175,7 +165,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(892,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(935,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -184,7 +174,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(893,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(936,36): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -193,7 +183,7 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(901,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(937,36): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
           with
           [
               Scalar=double
@@ -202,44 +192,732 @@ F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cp
           [
               _Ty=float
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(902,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(763,32): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(764,24): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(855,52): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(857,41): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(860,42): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(872,55): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(873,35): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(874,35): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(925,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(927,28): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(1012,46): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::EdgeHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_edge_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{12,{flat}}' }',0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(1031,23): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_vertex_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{4,{flat}}' }',0}>::operator OpenMesh::VertexHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+  MyForm.cpp
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\timestamp.h(14,1): warning C4005: 'WIN32_LEAN_AND_MEAN': macro redefinition
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\FreeGLUT\freeglut_std.h(58): message : see previous definition of 'WIN32_LEAN_AND_MEAN'
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\MyForm.h(652,1): warning C4305: '=': truncation from 'double' to 'float'
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\MyForm.h(655,1): warning C4305: '=': truncation from 'double' to 'float'
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\MyForm.h(859,36): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
-              Scalar=double
+              T=float
           ]
-          and
-          [
-              _Ty=float
-          ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(905,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\MyForm.cpp(6,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\GLM\glm\ext\matrix_clip_space.inl(253,28): warning C4244: 'initializing': conversion from 'double' to 'T', possible loss of data
           with
           [
-              Scalar=double
+              T=int
           ]
-          and
-          [
-              _Ty=float
-          ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(906,34): warning C4244: 'argument': conversion from 'Scalar' to '_Ty', possible loss of data
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\GLM\glm\ext\matrix_clip_space.inl(347): message : see reference to function template instantiation 'glm::mat<4,4,int,glm::packed_highp> glm::perspectiveRH_NO<T>(T,T,T,T)' being compiled
           with
           [
-              Scalar=double
+              T=int
           ]
-          and
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\MyForm.h(491): message : see reference to function template instantiation 'glm::mat<4,4,int,glm::packed_highp> glm::perspective<int>(T,T,T,T)' being compiled
+          with
           [
-              _Ty=float
+              T=int
           ]
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(744,32): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(745,24): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(801,52): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(803,41): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(806,42): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(818,35): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(819,35): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel::HalfedgeHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toHalfedgeHandle,0}>::operator OpenMesh::HalfedgeHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(867,30): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::operator bool': Do not use this error prone implicit cast. Compare to end-iterator or use is_valid(), instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(869,28): warning C4996: 'OpenMesh::Iterators::GenericCirculatorT_DEPRECATED<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::FaceHandle,OpenMesh::ArrayKernel::VertexHandle,{&OpenMesh::Iterators::GenericCirculatorBaseT<OpenMesh::PolyConnectivity::This>::toVertexHandle,0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(927,46): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::EdgeHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_edge_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{12,{flat}}' }',0}>::handle': This function clutters your code. Use dereferencing operators -> and * instead.
-F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh_EX\Mesh\GUA_OM.cpp(946,23): warning C4996: 'OpenMesh::Iterators::GenericIteratorT<OpenMesh::PolyConnectivity::This,OpenMesh::ArrayKernel::VertexHandle,OpenMesh::ArrayKernel,{&OpenMesh::ArrayKernel::has_vertex_status,0},{&OpenMesh::ArrayKernel::[thunk]: __thiscall OpenMesh::ArrayKernel::`vcall'{4,{flat}}' }',0}>::operator OpenMesh::VertexHandle': Implicit casts of iterators are unsafe. Use dereferencing operators -> and * instead.
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\GLM\glm\ext\matrix_clip_space.inl(253,23): warning C4244: 'initializing': conversion from 'double' to 'const T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Generating Code...
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(687): warning C4793: '`anonymous namespace'::stbi__cpuid3': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2117): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2118): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2119): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2120): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2121): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2122): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2123): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2124): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2127): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2128): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2131): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2132): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2133): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2134): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2135): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2136): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2137): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2138): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2141): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2145): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2145): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2146): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2146): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2147): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2147): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2148): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2148): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2151): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2151): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2152): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2152): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2153): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2153): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2154): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2154): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2157): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2157): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2158): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2158): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2159): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2159): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2160): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2160): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2164): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2168): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2169): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2170): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2171): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2174): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2174): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2175): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2175): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2178): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2178): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2179): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2179): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2182): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2182): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2183): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2183): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2186): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2187): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2187): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2188): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2189): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2189): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2190): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2191): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2191): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2192): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2193): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2193): warning C4793: '`anonymous namespace'::stbi__idct_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3138): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3139): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3140): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3141): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3142): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3143): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3144): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3148): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3149): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3150): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3151): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3152): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3155): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3156): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3156): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3157): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3157): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3160): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3161): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3162): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3163): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3164): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3165): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3166): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3167): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3168): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3171): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3172): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3173): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3176): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3177): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3180): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3181): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3182): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3183): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3186): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(3187): warning C4793: '`anonymous namespace'::stbi__YCbCr_to_RGB_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2960): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2961): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2962): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2963): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2964): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2965): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2966): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2967): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2974): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2975): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2976): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2977): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2983): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2984): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2985): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2986): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2987): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2988): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2989): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2992): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2993): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2994): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2995): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2998): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
+F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\OpenMesh-5.2\include\STB\stb_image.h(2999): warning C4793: '`anonymous namespace'::stbi__resample_row_hv_2_simd': function compiled as native:
+  	Found an intrinsic not supported in managed code
 F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\Eigen-3.2.8\Eigen\src\Core\arch\SSE\PacketMath.h(221): warning C4793: 'Eigen::internal::pload<__m128i>': function compiled as native:
   	Found an intrinsic not supported in managed code
 F:\BasicCG\quizs\practice\ResolvingLinear\OpenMesh_EX\Eigen-3.2.8\Eigen\src\Core\arch\SSE\PacketMath.h(256): warning C4793: 'Eigen::internal::ploadu<__m128i>': function compiled as native:

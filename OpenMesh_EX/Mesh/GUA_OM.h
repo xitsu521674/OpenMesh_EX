@@ -255,6 +255,8 @@ public:
 	std::vector<float>						   textureData;
 	std::vector<float>						   circleData;
 	std::vector<float>						   solvedData;
+	std::vector<float>						   patchedModelData;
+	std::map<int, std::vector<float>>		   manualTex;
 
 	void Render_Solid();
 	void Render_SolidWireframe();
@@ -263,6 +265,7 @@ public:
 	void initAvailableData();
 	void generateChosenData();
 	void computeTextureCoordinate();
+	void buildPatchedData();
 private:
 };
 

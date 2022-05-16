@@ -693,6 +693,7 @@ void Tri_Mesh::generateChosenData() {
 	}
 }
 void Tri_Mesh::computeTextureCoordinate() {
+	manualTex.clear();
 	if (!isChosenFaceGathing) {
 		return;
 	}
@@ -719,6 +720,8 @@ void Tri_Mesh::computeTextureCoordinate() {
 	pos[0] = 0;
 	pos[1] = 0;
 	property(newPos, orderedOutsideVertex[0]) = OpenMesh::Vec2d(pos[0], pos[1]);
+	std::vector<float> tex{ 0,0 };
+	manualTex[orderedOutsideVertex[0].idx()] = tex;
 	double accLength = 0.0f;
 	double oneSideLength = modelLength / 4.0;
 	for (int i = 1; i < orderedOutsideVertex.size(); ++i){
@@ -750,6 +753,8 @@ void Tri_Mesh::computeTextureCoordinate() {
 		pos[0] /= oneSideLength;
 		pos[1] /= oneSideLength;
 		property(newPos, orderedOutsideVertex[i]) = OpenMesh::Vec2d(pos[0], pos[1]);
+		std::vector<float> tex{ (float)pos[0], (float)pos[1] };
+		manualTex[orderedOutsideVertex[i].idx()] = tex;
 	}
 	//開始計算各half edge 的weight
 	for (VertexHandle _vh : insideVertex) {
@@ -903,6 +908,8 @@ void Tri_Mesh::computeTextureCoordinate() {
 			pos[0] = X[0][i];
 			pos[1] = X[1][i];
 			property(newPos, orderedInsideVertex[i]) = pos;
+			std::vector<float> tex{ (float)pos[0], (float)pos[1] };
+			manualTex[orderedInsideVertex[i].idx()] = tex;
 			insideVertexData.push_back(pos[0]);
 			insideVertexData.push_back(pos[1]);
 			insideVertexData.push_back(0);
@@ -910,6 +917,7 @@ void Tri_Mesh::computeTextureCoordinate() {
 	}
 	// 重組新座標
 	solvedData.clear();
+	patchedModelData.clear();
 	for (int offset : chosenFace)
 	{
 		FaceHandle _fh = face_handle(offset);
@@ -921,6 +929,12 @@ void Tri_Mesh::computeTextureCoordinate() {
 			solvedData.push_back(pos[0]);
 			solvedData.push_back(pos[1]);
 			solvedData.push_back(0);
+			Point p = point(_vh);
+			patchedModelData.push_back(p[0]);
+			patchedModelData.push_back(p[1]);
+			patchedModelData.push_back(p[2]);
+			patchedModelData.push_back(pos[0]);
+			patchedModelData.push_back(pos[1]);
 		}
 	}
 	//準備當外框的圓圈
@@ -944,38 +958,45 @@ void Tri_Mesh::computeTextureCoordinate() {
 		circleData.push_back(1-i);
 		circleData.push_back(0);
 	}
-	//準備外圈座標用來畫的
-	/*for (int i = 0; i < orderedOutsideVertex.size() - 1; ++i) {
-		OpenMesh::Vec2d curPos = property(newPos, orderedOutsideVertex[i]);
-		OpenMesh::Vec2d nxtPos = property(newPos, orderedOutsideVertex[i + 1]);
-		if (curPos[0] < nxtPos[0]) {
-			textureData.push_back(curPos[0]);
-			textureData.push_back(curPos[1]);
-			textureData.push_back(zPos);
+	
+	
+}
+void Tri_Mesh::buildPatchedData() {
+	/*OpenMesh::VPropHandleT<OpenMesh::Vec2d> newPos;
+	add_property(newPos, "newPos");
 
-			textureData.push_back(nxtPos[0]);
-			textureData.push_back(nxtPos[1]);
-			textureData.push_back(zPos);
+	patchedModelData.clear();
+	for (int offset : chosenFace)
+	{
+		FaceHandle _fh = face_handle(offset);
+		int count = 0;
+		for (FVIter fv_it = fv_iter(_fh); fv_it;++fv_it) {
+			patchedModelData.push_back(vertexData[offset * 9 + 0 + count * 3]);
+			patchedModelData.push_back(vertexData[offset * 9 + 1 + count * 3]);
+			patchedModelData.push_back(vertexData[offset * 9 + 2 + count * 3]);
+			int id = vertex_handle(fv_it).idx();
 
-			textureData.push_back(0);
-			textureData.push_back(0);
-			textureData.push_back(zPos);
+			std::vector<float> tex = manualTex[vertex_handle(fv_it).idx()];
+			float v1, v2;
+			if (id == 1) {
+				v1 = 0;
+				v2 = 0;
+			}
+			else {
+				v1 = tex[0];
+				v2 = tex[1];
+			}
+			
+
+			patchedModelData.push_back(v1);
+			patchedModelData.push_back(v2);
+			if(id!=1)
+			std::cout << "vertex id:" << vertexData[offset * 9 + 0 + count * 3] << " " << vertexData[offset * 9 + 1 + count * 3] << " "
+				<< vertexData[offset * 9 + 2 + count * 3] << " " << tex[0] << " " << tex[1] << "\n";
+			count++;
 		}
-		else {
-			textureData.push_back(nxtPos[0]);
-			textureData.push_back(nxtPos[1]);
-			textureData.push_back(zPos);
-
-			textureData.push_back(curPos[0]);
-			textureData.push_back(curPos[1]);
-			textureData.push_back(zPos);
-
-			textureData.push_back(0);
-			textureData.push_back(0);
-			textureData.push_back(zPos);
-		}
+		
 	}*/
-
 }
 void Tri_Mesh::Render_Wireframe()
 {
